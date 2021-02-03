@@ -1,9 +1,9 @@
 <%= form_with model: @score_subject_average, url: scores_path, id: "id_form", local: true do |f|  %>
 <div>
-テスト名(点数)　<%= f.text_field :title,                       class: "gofo" %>
+テスト名(点数)　<%= f.text_field :title,                       class: "gofo", id: "title" %>
 </div>
 <div>
-テスト名(平均点)<%= f.text_field :avg_title,                       class: "fuga" %>
+<%= f.text_field :avg_title,                       class: "fuga", id: "avg_title" %>
 </div>
 
 <table>
