@@ -9,5 +9,10 @@ Rails.application.routes.draw do
   
   resources :averages
   
-  resources :scores
+  resources :scores do
+    collection do
+      get 'my_scores'
+    end
+  end
+
 end

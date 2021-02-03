@@ -13,6 +13,9 @@ class ScoresController < ApplicationController
     redirect_to action: :new
   end
 
+  def my_scores
+  end
+
   private
 
   def mixed_params
