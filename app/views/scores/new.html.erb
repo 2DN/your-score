@@ -1,9 +1,7 @@
 <%= form_with model: @score_subject_average, url: scores_path, id: "id_form", local: true do |f|  %>
 <div>
-テスト名(点数)　<%= f.text_field :title,                       class: "gofo", id: "title" %>
-</div>
-<div>
-<%= f.text_field :avg_title,                       class: "fuga", id: "avg_title" %>
+テスト名<%= f.text_field :title,                       class: "gofo", id: "title" %>
+<%= f.text_field :avg_title,                       class: "fuga", id: "avg_title", style: "display:none;" %>
 </div>
 
 <table>
@@ -218,5 +216,6 @@
     <td><%= f.text_field :avg_language,                    class: "fuga" %></td>
   </tr>
 </table>
+<%= f.text_area :review, class: "gofo", placeholder: "メモ" %>
 <%= f.submit :submit %>
 <% end %>
