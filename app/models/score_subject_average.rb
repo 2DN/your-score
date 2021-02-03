@@ -13,7 +13,7 @@ class ScoreSubjectAverage
                 :avg_science_n_life, :avg_basic_physics, :avg_physics, :avg_basic_chemistry, :avg_chemistry, :avg_basic_earth_science, :avg_earth_science, :avg_basic_biology, :avg_biology, :avg_science,
                 :avg_wld_history_a, :avg_wld_history_b, :avg_dms_history_a, :avg_dms_history_b, :avg_geography_a, :avg_geography_b, :avg_ctp_society, :avg_ethics, :avg_politics_n_economy, :avg_ethics_n_politics_n_economy, :avg_society,
                 :avg_listening, :avg_reading, :avg_english, :avg_language,
-                :sub_title, :sub_jpn_ctp, :sub_jpn_classic, :sub_jpn_chinese, :sub_jpn,
+                :sub_jpn_ctp, :sub_jpn_classic, :sub_jpn_chinese, :sub_jpn,
                 :sub_math_1_a, :sub_math_2_b, :sub_math_3_c, :sub_math_1_a, :sub_math_1, :sub_math_2, :sub_math_3, :sub_math_a, :sub_math_b, :sub_math_c, :sub_math,
                 :sub_book_keep, :sub_basic_info,
                 :sub_science_n_life, :sub_basic_physics, :sub_physics, :sub_basic_chemistry, :sub_chemistry, :sub_basic_earth_science, :sub_earth_science, :sub_basic_biology, :sub_biology, :sub_science,
@@ -29,7 +29,7 @@ class ScoreSubjectAverage
       avg_wld_history_a: avg_wld_history_a, avg_wld_history_b: avg_wld_history_b, avg_dms_history_a: avg_dms_history_a, avg_dms_history_b: avg_dms_history_b, avg_geography_a: avg_geography_a, avg_geography_b: avg_geography_b, avg_ctp_society: avg_ctp_society, avg_ethics: avg_ethics, avg_politics_n_economy: avg_politics_n_economy, avg_ethics_n_politics_n_economy: avg_ethics_n_politics_n_economy, avg_society: avg_society, 
       avg_listening: avg_listening, avg_reading: avg_reading, avg_english: avg_english, avg_language: avg_language)
 
-    subject = Subject.create(sub_title: sub_title, sub_jpn_ctp: sub_jpn_ctp, sub_jpn_classic: sub_jpn_classic, sub_jpn_chinese: sub_jpn_chinese, sub_jpn: sub_jpn,
+    subject = Subject.create(sub_jpn_ctp: sub_jpn_ctp, sub_jpn_classic: sub_jpn_classic, sub_jpn_chinese: sub_jpn_chinese, sub_jpn: sub_jpn,
       sub_math_1_a: sub_math_1_a, sub_math_2_b: sub_math_2_b, sub_math_3_c: sub_math_3_c, sub_math_1_a: sub_math_1_a, sub_math_1: sub_math_1, sub_math_2: sub_math_2, sub_math_3: sub_math_3, sub_math_a: sub_math_a, sub_math_b: sub_math_b, sub_math_c: sub_math_c, sub_math: sub_math,
       sub_book_keep: sub_book_keep, sub_basic_info: sub_basic_info,
       sub_science_n_life: sub_science_n_life, sub_basic_physics: sub_basic_physics, sub_physics: sub_physics, sub_basic_chemistry: sub_basic_chemistry, sub_chemistry: sub_chemistry, sub_basic_earth_science: sub_basic_earth_science, sub_earth_science: sub_earth_science, sub_basic_biology: sub_basic_biology, sub_biology: sub_biology, sub_science: sub_science,

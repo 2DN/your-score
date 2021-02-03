@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_054051) do
+ActiveRecord::Schema.define(version: 2021_02_03_100700) do
 
   create_table "averages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "avg_title", null: false
@@ -114,7 +114,6 @@ ActiveRecord::Schema.define(version: 2021_02_03_054051) do
   end
 
   create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "sub_title", null: false
     t.string "sub_jpn_ctp"
     t.string "sub_jpn_classic"
     t.string "sub_jpn_chinese"
