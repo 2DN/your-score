@@ -20,6 +20,101 @@ class ScoreSubjectAverage
                 :sub_wld_history_a, :sub_wld_history_b, :sub_dms_history_a, :sub_dms_history_b, :sub_geography_a, :sub_geography_b, :sub_ctp_society, :sub_ethics, :sub_politics_n_economy, :sub_ethics_n_politics_n_economy, :sub_society,
                 :sub_listening, :sub_reading, :sub_english, :sub_language
   
+  
+  with_options presence: true do
+    validates :title
+    validates :avg_title
+    validates :user_id
+  end
+
+  with_options numericality: { only_integer: true } do
+    validates :jpn_ctp
+    validates :jpn_classic
+    validates :jpn_chinese
+    validates :jpn
+    validates :math_1_a
+    validates :math_2_b
+    validates :math_3_c
+    validates :math_1
+    validates :math_2
+    validates :math_3
+    validates :math_a
+    validates :math_b
+    validates :math_c
+    validates :math
+    validates :book_keep
+    validates :basic_info
+    validates :science_n_life
+    validates :basic_physics
+    validates :physics
+    validates :basic_chemistry
+    validates :chemistry
+    validates :basic_earth_science
+    validates :earth_science
+    validates :basic_biology
+    validates :biology
+    validates :science
+    validates :wld_history_a
+    validates :wld_history_b
+    validates :dms_history_a
+    validates :dms_history_b
+    validates :geography_a
+    validates :geography_b
+    validates :ctp_society
+    validates :ethics
+    validates :politics_n_economy
+    validates :ethics_n_politics_n_economy
+    validates :society
+    validates :listening
+    validates :reading
+    validates :english
+    validates :language
+    validates :avg_jpn_ctp
+    validates :avg_jpn_classic
+    validates :avg_jpn_chinese
+    validates :avg_jpn
+    validates :avg_math_1_a
+    validates :avg_math_2_b
+    validates :avg_math_3_c
+    validates :avg_math_1_a
+    validates :avg_math_1
+    validates :avg_math_2
+    validates :avg_math_3
+    validates :avg_math_a
+    validates :avg_math_b
+    validates :avg_math_c
+    validates :avg_math
+    validates :avg_book_keep
+    validates :avg_basic_info
+    validates :avg_science_n_life
+    validates :avg_basic_physics
+    validates :avg_physics
+    validates :avg_basic_chemistry
+    validates :avg_chemistry
+    validates :avg_basic_earth_science
+    validates :avg_earth_science
+    validates :avg_basic_biology
+    validates :avg_biology
+    validates :avg_science
+    validates :avg_wld_history_a
+    validates :avg_wld_history_b
+    validates :avg_dms_history_a
+    validates :avg_dms_history_b
+    validates :avg_geography_a
+    validates :avg_geography_b
+    validates :avg_ctp_society
+    validates :avg_ethics
+    validates :avg_politics_n_economy
+    validates :avg_ethics_n_politics_n_economy
+    validates :avg_society
+    validates :avg_listening
+    validates :avg_reading
+    validates :avg_english
+    validates :avg_language
+  end
+
+
+
   def save
     
     average = Average.create(avg_title: avg_title, avg_jpn_ctp: avg_jpn_ctp, avg_jpn_classic: avg_jpn_classic, avg_jpn_chinese: avg_jpn_chinese, avg_jpn: avg_jpn,
