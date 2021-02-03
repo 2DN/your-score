@@ -103,7 +103,7 @@
 | avg_biology                     | integer    |                                | 生物(平均点)
 | avg_science                     | integer    |                                | 理科(平均点)
 | avg_wld_history_a               | integer    |                                | 世界史A(平均点)
-| wld_history_b                   | integer    |                                | 世界史B(平均点)
+| avg_wld_history_b               | integer    |                                | 世界史B(平均点)
 | avg_dms_history_a               | integer    |                                | 日本史A(平均点)
 | avg_dms_history_b               | integer    |                                | 日本史B(平均点)
 | avg_geography_a                 | integer    |                                | 地理A(平均点)
