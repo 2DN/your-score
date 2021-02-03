@@ -6,7 +6,7 @@
   <main>
     <div>
       <%= link_to "成績登録", new_score_path  %>
-      <a href="#">過去の成績</a>
+      <%= link_to "過去の成績", my_scores_scores_path %>
       <a href="#">タスク</a>
       <a href="#">ユーザー情報</a>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>

@@ -1,0 +1,10 @@
+<div>
+<%= link_to "トップページ", root_path %>
+</div>
+<div>
+<% @scores.each do |score| %>
+
+<%= link_to score.title, score_path(score)  %>
+
+<% end %>
+</div>

@@ -14,6 +14,7 @@ class ScoresController < ApplicationController
   end
 
   def my_scores
+    @scores = Score.all
   end
 
   private
