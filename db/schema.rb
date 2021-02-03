@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_053713) do
+ActiveRecord::Schema.define(version: 2021_02_03_054051) do
 
   create_table "averages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "avg_title", null: false
@@ -57,6 +57,60 @@ ActiveRecord::Schema.define(version: 2021_02_03_053713) do
     t.integer "avg_language"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "scores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "jpn_ctp"
+    t.integer "jpn_classic"
+    t.integer "jpn_chinese"
+    t.integer "jpn"
+    t.integer "math_1_a"
+    t.integer "math_2_b"
+    t.integer "math_3_c"
+    t.integer "math_1"
+    t.integer "math_2"
+    t.integer "math_3"
+    t.integer "math_a"
+    t.integer "math_b"
+    t.integer "math_c"
+    t.integer "math"
+    t.integer "book_keep"
+    t.integer "basic_info"
+    t.integer "science_n_life"
+    t.integer "basic_physics"
+    t.integer "physics"
+    t.integer "basic_chemistry"
+    t.integer "chemistry"
+    t.integer "basic_earth_science"
+    t.integer "earth_science"
+    t.integer "basic_biology"
+    t.integer "biology"
+    t.integer "science"
+    t.integer "wld_history_a"
+    t.integer "wld_history_b"
+    t.integer "dms_history_a"
+    t.integer "dms_history_b"
+    t.integer "geography_a"
+    t.integer "geography_b"
+    t.integer "ctp_society"
+    t.integer "ethics"
+    t.integer "politics_n_economy"
+    t.integer "ethics_n_politics_n_economy"
+    t.integer "society"
+    t.integer "listening"
+    t.integer "reading"
+    t.integer "english"
+    t.integer "language"
+    t.text "review"
+    t.bigint "user_id", null: false
+    t.bigint "average_id", null: false
+    t.bigint "subject_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["average_id"], name: "index_scores_on_average_id"
+    t.index ["subject_id"], name: "index_scores_on_subject_id"
+    t.index ["user_id"], name: "index_scores_on_user_id"
   end
 
   create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -129,5 +183,8 @@ ActiveRecord::Schema.define(version: 2021_02_03_053713) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "scores", "averages"
+  add_foreign_key "scores", "subjects"
+  add_foreign_key "scores", "users"
   add_foreign_key "tasks", "users"
 end
