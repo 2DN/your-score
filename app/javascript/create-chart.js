@@ -1,13 +1,15 @@
 function createChart(){
-  var chart;
+  var barChart;
+  var radarChart;
   console.log(gon.array_score)
+  const hitRad = gon.array_score.length
   console.log(gon.array_average)
   console.log(gon.array_subject)
-  const ctx = document.getElementById("myBarChart");
-  if( chart ){
-    chart.destroy();
+  const ctx1 = document.getElementById("myBarChart");
+  if( barChart ){
+    barChart.destroy();
   }
-  chart = new Chart(ctx, {
+  barChart = new Chart(ctx1, {
     // グラフの種類
     type: 'bar',
     // データの設定
@@ -41,6 +43,50 @@ function createChart(){
             max: 200
           }
         }]
+      }
+    }
+  });
+  const ctx2 = document.getElementById("myRadarChart");
+  if( radarChart ){
+    radarChart.destroy();
+  }
+  radarChart = new Chart(ctx2, {
+    type: 'radar',
+
+    data: {
+      labels: gon.array_subject,
+      datasets: [
+        {
+          label: "成績",
+          // backgroundColor: "rgba(200,112,126,0.3)",
+          // borderColor: "#ff7373",
+          // pointBackgroundColor: "rgba(200,112,126,1)",
+          // pointBorderColor: "#fff",
+          // pointHoverBackgroundColor: "#fff",
+          // pointHoverBorderColor: "rgba(200,112,126,1)",
+          hitRadius: hitRad,
+          data: gon.array_score
+        },
+        {
+          label: "平均点",
+          // backgroundColor: "rgba(80,126,164,0.3)",
+          // borderColor: "#80b3ff",
+          // pointBackgroundColor: "rgba(80,126,164,1)",
+          // pointBorderColor: "#fff",
+          // pointHoverBackgroundColor: "#fff",
+          // pointHoverBorderColor: "rgba(80,126,164,1)",
+          hitRadius: hitRad,
+          data: gon.array_average
+        }
+      ]
+    },
+    options: {
+      scale: {
+        ticks: {
+          beginAtZero: true,
+          min: 0,
+          max: 200,
+        }
       }
     }
   });
