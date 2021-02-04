@@ -21,7 +21,7 @@ class ScoresController < ApplicationController
     # インスタンス変数----------SCORE----------SCORE----------SCORE----------
     @score = Score.find(params[:id])
 
-    hash_score = { title: @score.title, jpn_ctp: @score.jpn_ctp, jpn_classic: @score.jpn_classic, jpn_chinese: @score.jpn_chinese, jpn: @score.jpn,
+    hash_score = {jpn_ctp: @score.jpn_ctp, jpn_classic: @score.jpn_classic, jpn_chinese: @score.jpn_chinese, jpn: @score.jpn,
       math_1_a: @score.math_1_a, math_2_b: @score.math_2_b, math_3_c: @score.math_3_c, math_1_a: @score.math_1_a, math_1: @score.math_1, math_2: @score.math_2, math_3: @score.math_3, math_a: @score.math_a, math_b: @score.math_b, math_c: @score.math_c, math: @score.math,
       book_keep: @score.book_keep, basic_info: @score.basic_info,
       science_n_life: @score.science_n_life, basic_physics: @score.basic_physics, physics: @score.physics, basic_chemistry: @score.basic_chemistry, chemistry: @score.chemistry, basic_earth_science: @score.basic_earth_science, earth_science: @score.earth_science, basic_biology: @score.basic_biology, biology: @score.biology, science: @score.science,
@@ -34,6 +34,8 @@ class ScoresController < ApplicationController
         @array_score << v
       end
     end
+
+    gon.array_score = @array_score
 
     # インスタンス変数----------AVERAGE----------AVERAGE----------AVERAGE----------
     @average = Average.find(@score.average_id)
@@ -52,6 +54,8 @@ class ScoresController < ApplicationController
       end
     end
 
+    gon.array_average = @array_average
+
     # インスタンス変数----------SUBJECT----------SUBJECT----------SUBJECT----------
     @subject = Subject.find(@score.subject_id)
 
@@ -68,6 +72,8 @@ class ScoresController < ApplicationController
       @array_subject << v
       end
     end
+
+    gon.array_subject = @array_subject
 
   end
 

@@ -1,4 +1,5 @@
 <head>
+
 </head>
 <body>
 <header>
@@ -9,22 +10,7 @@
 </div>
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 <div>
-受験した教科
-<% @array_subject.each do |sub_val| %>
-<div class="sub_val"><%= sub_val %></div>
-<% end %>
-</div>
-<div>
-平均点
-<% @array_average.each do |avg_val| %>
-<div class="avg_val"><%= avg_val %></div>
-<% end %>
-</div>
-<div>
-点数
-<% @array_score.each do |val| %>
-<div class="val"><%= val %></div>
-<% end %>
+<canvas id="myBarChart" width="800" height="400"></canvas>
 </div>
 
 </main>
