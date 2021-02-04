@@ -20,7 +20,7 @@ function createChart(){
         // 凡例
         label: "成績",
         // 背景色
-        backgroundColor: "rgba(200,112,126)",
+        backgroundColor: gon.array_color,
         // 枠線の色
         // borderColor: [],
         // 枠線の幅

@@ -21,6 +21,11 @@ class ScoresController < ApplicationController
     # インスタンス変数----------SCORE----------SCORE----------SCORE----------
     @score = Score.find(params[:id])
 
+    color = ["black", "dimgray", "gray", "darkgray", "silver", "lightgray", "midnightblue", "navy", "darkblue", "blue", "dodgerblue", "lightblue", "aqua", "cadetblue", "aquamarine", "teal",
+    "green", "darkgreen", "forestgreen", "lime", "olive", "yellow", "gold", "orange", "maroon", "darkred", "red", "brown", "pink", "deeppink", "violet", "plum", "magenta", "orchid","darkviolet",
+    "purple", "indigo", "blueviolet", "fuchsia", "slateblue", "white", "orange", "orange", "black" ]
+    
+
     hash_score = {jpn_ctp: @score.jpn_ctp, jpn_classic: @score.jpn_classic, jpn_chinese: @score.jpn_chinese, jpn: @score.jpn,
       math_1_a: @score.math_1_a, math_2_b: @score.math_2_b, math_3_c: @score.math_3_c, math_1_a: @score.math_1_a, math_1: @score.math_1, math_2: @score.math_2, math_3: @score.math_3, math_a: @score.math_a, math_b: @score.math_b, math_c: @score.math_c, math: @score.math,
       book_keep: @score.book_keep, basic_info: @score.basic_info,
@@ -29,12 +34,17 @@ class ScoresController < ApplicationController
       listening: @score.listening, reading: @score.reading, english: @score.english, language: @score.language, review: @score.review }
 
     @array_score = []
+    @array_color = []
+    i = 0
     hash_score.each_value do |v|
+      i = i + 1
       if v != nil
         @array_score << v
+        @array_color << color[i]
       end
     end
 
+    gon.array_color = @array_color
     gon.array_score = @array_score
 
     # インスタンス変数----------AVERAGE----------AVERAGE----------AVERAGE----------
