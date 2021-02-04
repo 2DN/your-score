@@ -1,10 +1,10 @@
 class ScoresController < ApplicationController
 
   before_action :authenticate_user!
-  
+
   def index
-    recent_score = Score.order(created_at: "DESC").limit(1)
-    @score = recent_score[0]
+    scores = Score.includes(:user).order(created_at: :desc)
+    @score = scores[0]
     # ↓ A method creating charts.
     score_get_charted
   end
