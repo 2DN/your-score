@@ -2,9 +2,20 @@
 <%= link_to "トップページ", root_path %>
 </div>
 <div>
-<% @scores.each do |score| %>
 
-<%= link_to score.title, score_path(score)  %>
 
-<% end %>
+
+
+
 </div>
+
+<table>
+  <% @scores.each do |score| %>
+  <tr>
+    <td><%= score.title %></td>
+    <td><%= link_to "詳細", score_path(score) %></td>
+    <td><%= link_to "編集", edit_score_path(score) %></td>
+    <td><%= link_to "削除", score_path(score), method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
