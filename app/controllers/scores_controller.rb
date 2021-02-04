@@ -37,11 +37,11 @@ class ScoresController < ApplicationController
     @array_color = []
     i = 0
     hash_score.each_value do |v|
-      i = i + 1
       if v != nil
         @array_score << v
         @array_color << color[i]
       end
+      i = i + 1
     end
 
     gon.array_color = @array_color
