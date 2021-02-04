@@ -68,7 +68,7 @@ class ScoresController < ApplicationController
       @array_subject << v
       end
     end
-    
+
   end
 
   private
