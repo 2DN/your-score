@@ -11,19 +11,19 @@
 <div>
 受験した教科
 <% @array_subject.each do |sub_val| %>
-<%= sub_val %>
+<div class="sub_val"><%= sub_val %></div>
 <% end %>
 </div>
 <div>
 平均点
 <% @array_average.each do |avg_val| %>
-<%= avg_val %>
+<div class="avg_val"><%= avg_val %></div>
 <% end %>
 </div>
 <div>
 点数
 <% @array_score.each do |val| %>
-<%= val %>
+<div class="val"><%= val %></div>
 <% end %>
 </div>
 
