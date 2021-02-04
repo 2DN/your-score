@@ -17,6 +17,9 @@ class ScoresController < ApplicationController
     @scores = Score.all
   end
 
+  def show
+  end
+
   private
 
   def mixed_params
