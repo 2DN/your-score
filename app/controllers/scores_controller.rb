@@ -20,7 +20,21 @@ class ScoresController < ApplicationController
   def show
     @score = Score.find(params[:id])
     @average = Average.find(@score.average_id)
+
+    hash_average = { avg_jpn_ctp: @average.avg_jpn_ctp, avg_jpn_classic: @average.avg_jpn_classic, avg_jpn_chinese: @average.avg_jpn_chinese, avg_jpn: @average.avg_jpn,
+      avg_math_1_a: @average.avg_math_1_a, avg_math_2_b: @average.avg_math_2_b, avg_math_3_c: @average.avg_math_3_c, avg_math_1_a: @average.avg_math_1_a, avg_math_1: @average.avg_math_1, avg_math_2: @average.avg_math_2, avg_math_3: @average.avg_math_3, avg_math_a: @average.avg_math_a, avg_math_b: @average.avg_math_b, avg_math_c: @average.avg_math_c, avg_math: @average.avg_math,
+      avg_book_keep: @average.avg_book_keep, avg_basic_info: @average.avg_basic_info,
+      avg_science_n_life: @average.avg_science_n_life, avg_basic_physics: @average.avg_basic_physics, avg_physics: @average.avg_physics, avg_basic_chemistry: @average.avg_basic_chemistry, avg_chemistry: @average.avg_chemistry, avg_basic_earth_science: @average.avg_basic_earth_science, avg_earth_science: @average.avg_earth_science, avg_basic_biology: @average.avg_basic_biology, avg_biology: @average.avg_biology, avg_science: @average.avg_science,
+      avg_wld_history_a: @average.avg_wld_history_a, avg_wld_history_b: @average.avg_wld_history_b, avg_dms_history_a: @average.avg_dms_history_a, avg_dms_history_b: @average.avg_dms_history_b, avg_geography_a: @average.avg_geography_a, avg_geography_b: @average.avg_geography_b, avg_ctp_society: @average.avg_ctp_society, avg_ethics: @average.avg_ethics, avg_politics_n_economy: @average.avg_politics_n_economy, avg_ethics_n_politics_n_economy: @average.avg_ethics_n_politics_n_economy, avg_society: @average.avg_society, 
+      avg_listening: @average.avg_listening, avg_reading: @average.avg_reading, avg_english: @average.avg_english, avg_language: @average.avg_language }
     
+    @array_average = []
+    hash_average.each_value do |v|
+      if v != nil
+        @array_average << v
+      end
+    end
+
     @subject = Subject.find(@score.subject_id)
 
     hash_subject = { sub_jpn_ctp: @subject.sub_jpn_ctp, sub_jpn_classic: @subject.sub_jpn_classic, sub_jpn_chinese: @subject.sub_jpn_chinese, sub_jpn: @subject.sub_jpn,
@@ -36,6 +50,8 @@ class ScoresController < ApplicationController
       @array_subject << v
       end
     end
+
+    
 
     
     
