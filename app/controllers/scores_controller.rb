@@ -18,6 +18,7 @@ class ScoresController < ApplicationController
   end
 
   def show
+    # インスタンス変数----------SCORE----------SCORE----------SCORE----------
     @score = Score.find(params[:id])
 
     hash_score = { title: @score.title, jpn_ctp: @score.jpn_ctp, jpn_classic: @score.jpn_classic, jpn_chinese: @score.jpn_chinese, jpn: @score.jpn,
@@ -34,6 +35,7 @@ class ScoresController < ApplicationController
       end
     end
 
+    # インスタンス変数----------AVERAGE----------AVERAGE----------AVERAGE----------
     @average = Average.find(@score.average_id)
 
     hash_average = { avg_jpn_ctp: @average.avg_jpn_ctp, avg_jpn_classic: @average.avg_jpn_classic, avg_jpn_chinese: @average.avg_jpn_chinese, avg_jpn: @average.avg_jpn,
@@ -50,6 +52,7 @@ class ScoresController < ApplicationController
       end
     end
 
+    # インスタンス変数----------SUBJECT----------SUBJECT----------SUBJECT----------
     @subject = Subject.find(@score.subject_id)
 
     hash_subject = { sub_jpn_ctp: @subject.sub_jpn_ctp, sub_jpn_classic: @subject.sub_jpn_classic, sub_jpn_chinese: @subject.sub_jpn_chinese, sub_jpn: @subject.sub_jpn,
@@ -65,12 +68,7 @@ class ScoresController < ApplicationController
       @array_subject << v
       end
     end
-
     
-
-    
-    
-
   end
 
   private
