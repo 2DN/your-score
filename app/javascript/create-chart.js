@@ -1,10 +1,9 @@
 function createChart(){
   var barChart;
   var radarChart;
-  console.log(gon.array_score)
-  const hitRad = gon.array_score.length
-  console.log(gon.array_average)
-  console.log(gon.array_subject)
+
+  const hitNum = gon.array_score.length
+  
   const ctx1 = document.getElementById("myBarChart");
   if( barChart ){
     barChart.destroy();
@@ -21,7 +20,7 @@ function createChart(){
         // 凡例
         label: "成績",
         // 背景色
-        // backgroundColor: ["#ff7f7f", "#80b3ff", "#80ffb3", "#e6ff80", "#e680ff"],
+        backgroundColor: "rgba(200,112,126)",
         // 枠線の色
         // borderColor: [],
         // 枠線の幅
@@ -58,24 +57,24 @@ function createChart(){
       datasets: [
         {
           label: "成績",
-          // backgroundColor: "rgba(200,112,126,0.3)",
-          // borderColor: "#ff7373",
-          // pointBackgroundColor: "rgba(200,112,126,1)",
-          // pointBorderColor: "#fff",
-          // pointHoverBackgroundColor: "#fff",
-          // pointHoverBorderColor: "rgba(200,112,126,1)",
-          hitRadius: hitRad,
+          backgroundColor: "rgba(200,112,126,0.3)",
+          borderColor: "#ff7373",
+          pointBackgroundColor: "rgba(200,112,126,1)",
+          pointBorderColor: "#fff",
+          pointHoverBackgroundColor: "#fff",
+          pointHoverBorderColor: "rgba(200,112,126,1)",
+          hitRadius: hitNum,
           data: gon.array_score
         },
         {
           label: "平均点",
-          // backgroundColor: "rgba(80,126,164,0.3)",
-          // borderColor: "#80b3ff",
-          // pointBackgroundColor: "rgba(80,126,164,1)",
-          // pointBorderColor: "#fff",
-          // pointHoverBackgroundColor: "#fff",
-          // pointHoverBorderColor: "rgba(80,126,164,1)",
-          hitRadius: hitRad,
+          backgroundColor: "rgba(80,126,164,0.3)",
+          borderColor: "#80b3ff",
+          pointBackgroundColor: "rgba(80,126,164,1)",
+          pointBorderColor: "#fff",
+          pointHoverBackgroundColor: "#fff",
+          pointHoverBorderColor: "rgba(80,126,164,1)",
+          hitRadius: hitNum,
           data: gon.array_average
         }
       ]
