@@ -14,11 +14,32 @@ class ScoresController < ApplicationController
   end
 
   def my_scores
-    @scores = Score.all
+    @scores = Score.where(user_id: current_user.id)
   end
 
   def show
     @score = Score.find(params[:id])
+    @average = Average.find(@score.average_id)
+    
+    @subject = Subject.find(@score.subject_id)
+
+    hash_subject = { sub_jpn_ctp: @subject.sub_jpn_ctp, sub_jpn_classic: @subject.sub_jpn_classic, sub_jpn_chinese: @subject.sub_jpn_chinese, sub_jpn: @subject.sub_jpn,
+      sub_math_1_a: @subject.sub_math_1_a, sub_math_2_b: @subject.sub_math_2_b, sub_math_3_c: @subject.sub_math_3_c, sub_math_1_a: @subject.sub_math_1_a, sub_math_1: @subject.sub_math_1, sub_math_2: @subject.sub_math_2, sub_math_3: @subject.sub_math_3, sub_math_a: @subject.sub_math_a, sub_math_b: @subject.sub_math_b, sub_math_c: @subject.sub_math_c, sub_math: @subject.sub_math,
+      sub_book_keep: @subject.sub_book_keep, sub_basic_info: @subject.sub_basic_info,
+      sub_science_n_life: @subject.sub_science_n_life, sub_basic_physics: @subject.sub_basic_physics, sub_physics: @subject.sub_physics, sub_basic_chemistry: @subject.sub_basic_chemistry, sub_chemistry: @subject.sub_chemistry, sub_basic_earth_science: @subject.sub_basic_earth_science, sub_earth_science: @subject.sub_earth_science, sub_basic_biology: @subject.sub_basic_biology, sub_biology: @subject.sub_biology, sub_science: @subject.sub_science,
+      sub_wld_history_a: @subject.sub_wld_history_a, sub_wld_history_b: @subject.sub_wld_history_b, sub_dms_history_a: @subject.sub_dms_history_a, sub_dms_history_b: @subject.sub_dms_history_b, sub_geography_a: @subject.sub_geography_a, sub_geography_b: @subject.sub_geography_b, sub_ctp_society: @subject.sub_ctp_society, sub_ethics: @subject.sub_ethics, sub_politics_n_economy: @subject.sub_politics_n_economy, sub_ethics_n_politics_n_economy: @subject.sub_ethics_n_politics_n_economy, sub_society: @subject.sub_society, 
+      sub_listening: @subject.sub_listening, sub_reading: @subject.sub_reading, sub_english: @subject.sub_english, sub_language: @subject.sub_language }
+
+    @array_subject = []
+    hash_subject.each_value do |v|
+      if v != "0"
+      @array_subject << v
+      end
+    end
+
+    
+    
+
   end
 
   private
