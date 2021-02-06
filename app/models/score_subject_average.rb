@@ -19,7 +19,8 @@ class ScoreSubjectAverage
                 :sub_book_keep, :sub_basic_info,
                 :sub_science_n_life, :sub_basic_physics, :sub_physics, :sub_basic_chemistry, :sub_chemistry, :sub_basic_earth_science, :sub_earth_science, :sub_basic_biology, :sub_biology, :sub_science,
                 :sub_wld_history_a, :sub_wld_history_b, :sub_dms_history_a, :sub_dms_history_b, :sub_geography_a, :sub_geography_b, :sub_ctp_society, :sub_ethics, :sub_politics_n_economy, :sub_ethics_n_politics_n_economy, :sub_society,
-                :sub_listening, :sub_reading, :sub_english, :sub_language
+                :sub_listening, :sub_reading, :sub_english, :sub_language,
+                :tag_name
   
   
   with_options presence: true do
@@ -114,8 +115,7 @@ class ScoreSubjectAverage
     validates :avg_language
   end
 
-
-
+  
   def save
     
     average = Average.create(avg_title: avg_title, avg_jpn_ctp: avg_jpn_ctp, avg_jpn_classic: avg_jpn_classic, avg_jpn_chinese: avg_jpn_chinese, avg_jpn: avg_jpn,
@@ -132,13 +132,18 @@ class ScoreSubjectAverage
       sub_wld_history_a: sub_wld_history_a, sub_wld_history_b: sub_wld_history_b, sub_dms_history_a: sub_dms_history_a, sub_dms_history_b: sub_dms_history_b, sub_geography_a: sub_geography_a, sub_geography_b: sub_geography_b, sub_ctp_society: sub_ctp_society, sub_ethics: sub_ethics, sub_politics_n_economy: sub_politics_n_economy, sub_ethics_n_politics_n_economy: sub_ethics_n_politics_n_economy, sub_society: sub_society, 
       sub_listening: sub_listening, sub_reading: sub_reading, sub_english: sub_english, sub_language: sub_language)
 
-    Score.create(title: title, jpn_ctp: jpn_ctp, jpn_classic: jpn_classic, jpn_chinese: jpn_chinese, jpn: jpn,
+    score = Score.create(title: title, jpn_ctp: jpn_ctp, jpn_classic: jpn_classic, jpn_chinese: jpn_chinese, jpn: jpn,
       math_1_a: math_1_a, math_2_b: math_2_b, math_3_c: math_3_c, math_1_a: math_1_a, math_1: math_1, math_2: math_2, math_3: math_3, math_a: math_a, math_b: math_b, math_c: math_c, math: math,
       book_keep: book_keep, basic_info: basic_info,
       science_n_life: science_n_life, basic_physics: basic_physics, physics: physics, basic_chemistry: basic_chemistry, chemistry: chemistry, basic_earth_science: basic_earth_science, earth_science: earth_science, basic_biology: basic_biology, biology: biology, science: science,
       wld_history_a: wld_history_a, wld_history_b: wld_history_b, dms_history_a: dms_history_a, dms_history_b: dms_history_b, geography_a: geography_a, geography_b: geography_b, ctp_society: ctp_society, ethics: ethics, politics_n_economy: politics_n_economy, ethics_n_politics_n_economy: ethics_n_politics_n_economy, society: society, 
       listening: listening, reading: reading, english: english, language: language, review: review, user_id: user_id, average_id: average.id, subject_id: subject.id)
-  
+    
+    tag = Tag.where(tag_name: tag_name).first_or_initialize
+    tag.save
+
+    ScoreTagRelation.create(score_id: score.id, tag_id: tag.id)
+    UserTagRelation.create(user_id: user_id, tag_id: tag.id)
   end
 
 end
