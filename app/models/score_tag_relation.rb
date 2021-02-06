@@ -1,0 +1,2 @@
+class ScoreTagRelation < ApplicationRecord
+end

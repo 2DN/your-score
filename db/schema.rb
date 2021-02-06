@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_031831) do
+ActiveRecord::Schema.define(version: 2021_02_06_032217) do
 
   create_table "averages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "avg_title", null: false
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 2021_02_06_031831) do
     t.integer "avg_language"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "score_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "score_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["score_id"], name: "index_score_tag_relations_on_score_id"
+    t.index ["tag_id"], name: "index_score_tag_relations_on_tag_id"
   end
 
   create_table "scores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -188,6 +197,8 @@ ActiveRecord::Schema.define(version: 2021_02_06_031831) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "score_tag_relations", "scores"
+  add_foreign_key "score_tag_relations", "tags"
   add_foreign_key "scores", "averages"
   add_foreign_key "scores", "subjects"
   add_foreign_key "scores", "users"
