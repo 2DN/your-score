@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_100700) do
+ActiveRecord::Schema.define(version: 2021_02_06_031831) do
 
   create_table "averages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "avg_title", null: false
@@ -155,6 +155,12 @@ ActiveRecord::Schema.define(version: 2021_02_03_100700) do
     t.string "sub_reading"
     t.string "sub_english"
     t.string "sub_language"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "tag_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
