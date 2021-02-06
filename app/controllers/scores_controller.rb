@@ -29,6 +29,15 @@ class ScoresController < ApplicationController
     score_get_charted
   end
 
+  def show_transition
+    @user = User.find(current_user.id)
+    @tag_names_array_for_options = []
+    @user_tag_relations = @user.user_tag_relations
+    @user_tag_relations.each do |user_tag|
+      @tag_names_array_for_options << [user_tag.tag.tag_name, user_tag.tag.id]
+    end
+  end
+
   private
 
   def mixed_params

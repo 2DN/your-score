@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :scores do
     collection do
       get 'my_scores'
+      get 'show_transition'
     end
   end
 
