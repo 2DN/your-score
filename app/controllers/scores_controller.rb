@@ -3,10 +3,13 @@ class ScoresController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    scores = Score.includes(:user).order(created_at: :desc)
-    @score = scores[0]
-    # ↓ A method creating charts.
-    score_get_charted
+    # 最新のスコアを取得し表示
+    scores = Score.where(user_id: current_user.id).order(created_at: :desc)
+    if scores.length > 0
+      @score = scores[0]
+      # ↓ A method creating charts.
+      score_get_charted
+    end
   end
 
   def new
@@ -71,9 +74,9 @@ class ScoresController < ApplicationController
     end
 
     render json: { scores: @total_scores_in_array, averages: @total_avg_scores_in_array }
+    
   end
-
-
+  
   private
 
   def mixed_params
@@ -121,8 +124,6 @@ class ScoresController < ApplicationController
 
     # インスタンス変数----------AVERAGE----------AVERAGE----------AVERAGE----------
     @average = Average.find(@score.average_id)
-    
-    
     @array_average = []
     @total_avg_score = 0
     @average.attributes.each do |k, v|
