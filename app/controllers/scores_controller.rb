@@ -39,8 +39,40 @@ class ScoresController < ApplicationController
   end
 
   def search
+    # タグとユーザーに紐づいたスコア
+    @tag = Tag.find(params[:id])
+    @scores = @tag.scores.where(user_id: current_user.id)
+    # [num,num,num]のような形で各トータルスコアを取得
+    @total_scores_in_array = []
+    @scores.each do |score| 
+      total_score = 0
+      score.attributes.each do |k, v|
+        if v != nil && k != "id" && k != "title" && k != "review" && k != "created_at" && k != "updated_at" &&  k != "user_id" && k != "subject_id" && k != "average_id"
+          total_score = total_score + v
+        end
+      end
+      @total_scores_in_array << total_score
+    end
+
+    # 平均点の合計
+    @averages = []
+    @scores.each do |score|
+      @averages << Average.find(score.average_id)
+    end
+    @total_avg_scores_in_array = []
+    @averages.each do |average|
+      total_avg_score = 0
+      average.attributes.each do |k, v|
+        if v != nil && k != "id" && k != "avg_title" && k != "created_at" && k != "updated_at"
+          total_avg_score = total_avg_score + v
+        end
+      end
+      @total_avg_scores_in_array << total_avg_score
+    end
+
+    render json: { scores: @total_scores_in_array, averages: @total_avg_scores_in_array }
   end
-  
+
 
   private
 
