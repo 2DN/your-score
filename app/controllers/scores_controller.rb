@@ -49,7 +49,7 @@ class ScoresController < ApplicationController
       :sub_book_keep, :sub_basic_info,
       :sub_science_n_life, :sub_basic_physics, :sub_physics, :sub_basic_chemistry, :sub_chemistry, :sub_basic_earth_science, :sub_earth_science, :sub_basic_biology, :sub_biology, :sub_science,
       :sub_wld_history_a, :sub_wld_history_b, :sub_dms_history_a, :sub_dms_history_b, :sub_geography_a, :sub_geography_b, :sub_ctp_society, :sub_ethics, :sub_politics_n_economy, :sub_ethics_n_politics_n_economy, :sub_society,
-      :sub_listening, :sub_reading, :sub_english, :sub_language).merge(user_id: current_user.id)
+      :sub_listening, :sub_reading, :sub_english, :sub_language, :tag_name).merge(user_id: current_user.id)
   end
 
   def score_get_charted
