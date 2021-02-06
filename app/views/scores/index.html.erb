@@ -2,18 +2,26 @@
 </head>
 <body>
   <header>
+  <%= current_user.username %>
+  
   </header>
   <main>
+    <div>
+    
+  <%= @total_avg_scores_in_array %>
+    </div>
     <div>
       <%= link_to "成績登録", new_score_path  %>
       <%= link_to "過去の成績", my_scores_scores_path %>
       <%= link_to "タスク", tasks_path %>
       <a href="#">ユーザー情報</a>
+      <%= link_to "成績推移", show_transition_scores_path %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     </div>
     <div>
     <canvas id="myBarChart" width="800" height="400"></canvas>
     <canvas id="myRadarChart" width="800" height="400"></canvas>
+    
     </div>
   </main>
   <footer>

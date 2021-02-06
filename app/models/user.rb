@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :scores
   has_many :tasks
+  has_many :user_tag_relations
+  has_many :tags, through: :user_tag_relations
 end
