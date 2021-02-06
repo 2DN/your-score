@@ -53,18 +53,20 @@ class ScoresController < ApplicationController
   end
 
   def score_get_charted
+
     color = ["black", "dimgray", "gray", "darkgray", "silver", "lightgray", "midnightblue", "navy", "darkblue", "blue", "dodgerblue", "lightblue", "aqua", "cadetblue", "aquamarine", "teal",
       "green", "darkgreen", "forestgreen", "lime", "olive", "yellow", "gold", "orange", "maroon", "darkred", "red", "brown", "pink", "deeppink", "violet", "plum", "magenta", "orchid","darkviolet",
       "purple", "indigo", "blueviolet", "fuchsia", "slateblue", "white", "orange", "orange", "black" ]
-      
 
     @array_score = []
     @array_color = []
+    @total_score = 0
     i = 0
-    @score.attributes.each_value do |v|
+    @score.attributes.each do |k, v|
       if v != nil && k != "id" && k != "title" && k != "review" && k != "created_at" && k != "updated_at" &&  k != "user_id" && k != "subject_id" && k != "average_id"
         @array_score << v
         @array_color << color[i]
+        @total_score += v
       end
       i = i + 1
     end
@@ -74,13 +76,14 @@ class ScoresController < ApplicationController
 
     # インスタンス変数----------AVERAGE----------AVERAGE----------AVERAGE----------
     @average = Average.find(@score.average_id)
-
     
     
     @array_average = []
-    @average.attributes.each_value do |v|
-      if v != nil &&  k != "id" && k != "avg_title" && k != "created_at" && k != "updated_at"
+    @total_avg_score = 0
+    @average.attributes.each do |k, v|
+      if v != nil &&  k != "id" && k != "avg_title" && k != "created_at" && k != "updated_at" 
         @array_average << v
+        @total_avg_score += v
       end
     end
 
@@ -90,7 +93,7 @@ class ScoresController < ApplicationController
     @subject = Subject.find(@score.subject_id)
 
     @array_subject = []
-    @subject.attributes.each_value do |v|
+    @subject.attributes.each do |k, v|
       if k != "id" && k != "created_at" && k != "updated_at" && v != "0"
       @array_subject << v
       end
