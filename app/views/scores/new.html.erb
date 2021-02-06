@@ -1,6 +1,7 @@
 <%= link_to "トップページ", root_path %>
 <%= form_with model: @score_subject_average, url: scores_path, id: "id_form", local: true do |f|  %>
 <div>
+タグ名<%= f.text_field :tag_name %>
 テスト名<%= f.text_field :title,                       class: "gofo", id: "title" %>
 <%= f.text_field :avg_title,                       class: "fuga", id: "avg_title", style: "display:none;" %>
 </div>
