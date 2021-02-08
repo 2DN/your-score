@@ -1,5 +1,6 @@
+<%= current_user.username %>
 <%= link_to "トップページ", root_path %>
-<%= form_with model: @form, url: scores_path, id: "id_form", local: true do |f|  %>
+<%= form_with model: @form, url: score_path(@score), method: :patch, id: "id_form", local: true do |f|  %>
 <div>
 タグ名<%= f.text_field :tag_name %>
 テスト名<%= f.text_field :title,                       class: "gofo", id: "title" %>

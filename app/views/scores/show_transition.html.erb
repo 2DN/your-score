@@ -1,9 +1,11 @@
 <%= link_to "トップページ", root_path %>
 
+<% if @scores.length != 0 %>
 <div id="form-box">
-  <%= form_with(id: "search-form", method: :GET, url: search_score_path(@tag_names_array_for_options)) do |form| %>
-  <%= form.select :keyword, @tag_names_array_for_options.uniq, class: "select-box" %>
+  <%= form_with(id: "search-form", method: :GET, url: search_score_path(@tags_array_for_options)) do |form| %>
+  <%= form.select :keyword, @tags_array_for_options.uniq, class: "select-box" %>
   <%= form.submit "表示", id: "submit-btn" %>
   <% end %>
 </div>
 <canvas id="myLineChart" width="800" height="400"></canvas>
+<% end %>
