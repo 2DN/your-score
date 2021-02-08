@@ -12,63 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_02_06_032407) do
 
-  create_table "averages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "avg_title", null: false
-    t.integer "avg_jpn_ctp"
-    t.integer "avg_jpn_classic"
-    t.integer "avg_jpn_chinese"
-    t.integer "avg_jpn"
-    t.integer "avg_math_1_a"
-    t.integer "avg_math_2_b"
-    t.integer "avg_math_3_c"
-    t.integer "avg_math_1"
-    t.integer "avg_math_2"
-    t.integer "avg_math_3"
-    t.integer "avg_math_a"
-    t.integer "avg_math_b"
-    t.integer "avg_math_c"
-    t.integer "avg_math"
-    t.integer "avg_book_keep"
-    t.integer "avg_basic_info"
-    t.integer "avg_science_n_life"
-    t.integer "avg_basic_physics"
-    t.integer "avg_physics"
-    t.integer "avg_basic_chemistry"
-    t.integer "avg_chemistry"
-    t.integer "avg_basic_earth_science"
-    t.integer "avg_earth_science"
-    t.integer "avg_basic_biology"
-    t.integer "avg_biology"
-    t.integer "avg_science"
-    t.integer "avg_wld_history_a"
-    t.integer "avg_wld_history_b"
-    t.integer "avg_dms_history_a"
-    t.integer "avg_dms_history_b"
-    t.integer "avg_geography_a"
-    t.integer "avg_geography_b"
-    t.integer "avg_ctp_society"
-    t.integer "avg_ethics"
-    t.integer "avg_politics_n_economy"
-    t.integer "avg_ethics_n_politics_n_economy"
-    t.integer "avg_society"
-    t.integer "avg_listening"
-    t.integer "avg_reading"
-    t.integer "avg_english"
-    t.integer "avg_language"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "score_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "score_id"
-    t.bigint "tag_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["score_id"], name: "index_score_tag_relations_on_score_id"
-    t.index ["tag_id"], name: "index_score_tag_relations_on_tag_id"
-  end
-
-  create_table "scores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "scores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: true do |t|
     t.string "title", null: false
     t.integer "jpn_ctp"
     t.integer "jpn_classic"
@@ -113,16 +57,70 @@ ActiveRecord::Schema.define(version: 2021_02_06_032407) do
     t.integer "language"
     t.text "review"
     t.bigint "user_id", null: false
-    t.bigint "average_id", null: false
-    t.bigint "subject_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["average_id"], name: "index_scores_on_average_id"
-    t.index ["subject_id"], name: "index_scores_on_subject_id"
     t.index ["user_id"], name: "index_scores_on_user_id"
   end
 
-  create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "averages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: true do |t|
+    t.string "avg_title", null: false
+    t.integer "avg_jpn_ctp"
+    t.integer "avg_jpn_classic"
+    t.integer "avg_jpn_chinese"
+    t.integer "avg_jpn"
+    t.integer "avg_math_1_a"
+    t.integer "avg_math_2_b"
+    t.integer "avg_math_3_c"
+    t.integer "avg_math_1"
+    t.integer "avg_math_2"
+    t.integer "avg_math_3"
+    t.integer "avg_math_a"
+    t.integer "avg_math_b"
+    t.integer "avg_math_c"
+    t.integer "avg_math"
+    t.integer "avg_book_keep"
+    t.integer "avg_basic_info"
+    t.integer "avg_science_n_life"
+    t.integer "avg_basic_physics"
+    t.integer "avg_physics"
+    t.integer "avg_basic_chemistry"
+    t.integer "avg_chemistry"
+    t.integer "avg_basic_earth_science"
+    t.integer "avg_earth_science"
+    t.integer "avg_basic_biology"
+    t.integer "avg_biology"
+    t.integer "avg_science"
+    t.integer "avg_wld_history_a"
+    t.integer "avg_wld_history_b"
+    t.integer "avg_dms_history_a"
+    t.integer "avg_dms_history_b"
+    t.integer "avg_geography_a"
+    t.integer "avg_geography_b"
+    t.integer "avg_ctp_society"
+    t.integer "avg_ethics"
+    t.integer "avg_politics_n_economy"
+    t.integer "avg_ethics_n_politics_n_economy"
+    t.integer "avg_society"
+    t.integer "avg_listening"
+    t.integer "avg_reading"
+    t.integer "avg_english"
+    t.integer "avg_language"
+    t.bigint "score_id", null: false
+    t.index ["score_id"], name: "index_averages_on_score_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "score_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: true do |t|
+    t.bigint "score_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["score_id"], name: "index_score_tag_relations_on_score_id"
+    t.index ["tag_id"], name: "index_score_tag_relations_on_tag_id"
+  end
+
+  create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: true do |t|
     t.string "sub_jpn_ctp"
     t.string "sub_jpn_classic"
     t.string "sub_jpn_chinese"
@@ -164,17 +162,19 @@ ActiveRecord::Schema.define(version: 2021_02_06_032407) do
     t.string "sub_reading"
     t.string "sub_english"
     t.string "sub_language"
+    t.bigint "score_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["score_id"], name: "index_subjects_on_score_id"
   end
 
-  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: true do |t|
     t.string "tag_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: true do |t|
     t.string "task_title", null: false
     t.string "memo"
     t.date "limit_date", null: false
@@ -184,16 +184,7 @@ ActiveRecord::Schema.define(version: 2021_02_06_032407) do
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
-  create_table "user_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "tag_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["tag_id"], name: "index_user_tag_relations_on_tag_id"
-    t.index ["user_id"], name: "index_user_tag_relations_on_user_id"
-  end
-
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: true do |t|
     t.string "username", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -208,10 +199,8 @@ ActiveRecord::Schema.define(version: 2021_02_06_032407) do
 
   add_foreign_key "score_tag_relations", "scores"
   add_foreign_key "score_tag_relations", "tags"
-  add_foreign_key "scores", "averages"
-  add_foreign_key "scores", "subjects"
+  add_foreign_key "averages", "scores"
+  add_foreign_key "subjects", "scores"
   add_foreign_key "scores", "users"
   add_foreign_key "tasks", "users"
-  add_foreign_key "user_tag_relations", "tags"
-  add_foreign_key "user_tag_relations", "users"
 end
