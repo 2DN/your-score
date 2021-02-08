@@ -14,7 +14,7 @@
       <%= link_to "成績登録", new_score_path  %>
       <%= link_to "過去の成績", my_scores_scores_path %>
       <%= link_to "タスク", tasks_path %>
-      <a href="#">ユーザー情報</a>
+      <%= link_to "ユーザー編集", edit_user_registration_path %>
       <%= link_to "成績推移", show_transition_scores_path %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     </div>
