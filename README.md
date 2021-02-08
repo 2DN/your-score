@@ -60,14 +60,36 @@
 | english                     | integer    |                                | 英語
 | language                    | integer    |                                | 外国語
 | user                        | references | null: false, foreign_key: true |
-| average                     | references | null: false, foreign_key: true |
-| subject                     | references | null: false, foreign_key: true |
+
 
 ### Association
 
 -belongs_to :user
--belongs_to :average
--belongs_to :subject
+-has_many :averages
+-has_many :subjects
+
+## tags テーブル
+
+| Column                          | Type       | Options                        |
+| :------------------------------ | :--------- | :----------------------------- |
+| tag_name                        | string     | uniqueness: true               | 
+
+### Association
+
+-has_many :score_tag_relations
+-has_many :scores, through: :score_tag_relations
+
+## score_tag_relations テーブル
+
+| Column                          | Type       | Options                        |
+| :------------------------------ | :--------- | :----------------------------- |
+| score                           | references | null: false, foreign_key: true | 
+| tag                             | references | null: false, foreign_key: true |
+
+### Association
+
+-belongs_to :score
+-belongs_to :tag
 
 
 
@@ -117,10 +139,11 @@
 | avg_reading                     | integer    |                                | リーディング(平均点)
 | avg_english                     | integer    |                                | 英語(平均点)
 | avg_language                    | integer    |                                | 外国語(平均点)
+| score                           | references | null: false, foreign_key: true |
 
 ### Association
 
--has_many :scores
+-belongs_to :score
 
 
 
@@ -170,10 +193,11 @@
 | sub_reading                     | string     |                                | リーディング
 | sub_english                     | string     |                                | 英語
 | sub_language                    | string     |                                | 外国語
+| score                           | references | null: false, foreign_key: true |
 
 ### Association
 
--has_many :scores
+-belongs_to :score
 
 
 
@@ -189,3 +213,4 @@
 ### Association
 
 -belongs_to :user
+
