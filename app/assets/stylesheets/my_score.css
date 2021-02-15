@@ -104,7 +104,6 @@ main {
    width: 100%;
    height: 10vh;
    padding: 30px 0;
-   
  }
 
  .title {
@@ -124,9 +123,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid 5px;
-  border-image: linear-gradient(to right, #ed8c72 0%, #2988bc 100%);
-  border-image-slice: 1;
+  border-bottom: solid 5px white;
  }
 
  .btn-box p{
