@@ -130,7 +130,9 @@ main {
 
 #destroy {
   display: block;
-  opacity: 0.5;
+  background-color: red;
+  color: white;
+  opacity: 0.4;
   font-size: 1.5em;
   width: 50%;
   height: 30px;

@@ -26,14 +26,14 @@ function transitionChart(){
                   labels: ["第1回", "第2回", "第3回", "第4回", "第5回", "第6回"],
                   datasets: [{
                       label: "成績推移",
-                      backgroundColor: "rgba(75,192,192,0.4)",
-                      borderColor: "rgba(75,192,192,1)",
+                      backgroundColor: "rgba(237, 140, 114, 0.5)",
+                      borderColor: "rgb(237, 140, 114)",
                       data: scores
                   },
                   {
                       label: "平均点推移",
-                      backgroundColor: "rgba(75,192,192,0.4)",
-                      borderColor: "rgba(75,192,192,1)",
+                      backgroundColor: "rgba(41, 136, 188, 0.5)",
+                      borderColor: "rgb(41, 136, 188)",
                       data: averages
                   }]
               },
