@@ -41,7 +41,9 @@
 
           <% if @tasks.length == 0 %>
           <div class="init-task-container">
+              <div class="wrap">
              <p class="init-task">予定を作ろう！</p>
+             </div>
              <%= link_to "新規作成", tasks_path %>
           </div>
           <% end %>

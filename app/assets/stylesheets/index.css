@@ -232,11 +232,17 @@ main {
   border-bottom-right-radius: 20px;
 }
 
-.init-task {
+/* .init-task {
   width: 95%;
-  font-size: 2.2em;
   margin: 10px auto 0 auto;
+} */
+
+.init-task-container p{
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1.5em;
   background: linear-gradient(transparent 60%, rgba(237, 140, 114, 0.9) 50%);
+  
 }
 
 .init-task-container a{
@@ -322,6 +328,10 @@ main {
   .task-title{
     font-size: 2.0vw;
     margin: 15px 0 10px 0;
+  }
+
+  .init-task-container p{
+    font-size: 2.2em;
   }
   
   .letters {
