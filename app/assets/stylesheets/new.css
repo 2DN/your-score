@@ -92,8 +92,6 @@ main {
  .main-wrapper {
    width: 95%;
    height: 95%;
-   /* border: black solid 1px; */
-   /* font-style: italic; */
    margin: 0 auto;
    color: grey;
    overflow: scroll;
@@ -202,7 +200,6 @@ input[type="submit"]{
   background-color: #ed8c72;
   box-shadow: 0 5px 5px 0 gray;
   -webkit-appearance: none;
-}
 }
 
 input[type="submit"]:active{

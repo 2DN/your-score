@@ -64,23 +64,21 @@ main {
   height: 100%;
   background-color: rgba(47, 73, 110, 0.9);
   position: absolute;
-  
   z-index: 1;
   font-weight: bold;
  }
  
- .menu-container {
+.menu-container {
   width: 90%;
   height: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
- }
+}
  
  .menu a{
    color: #f4eade;
-   
    font-size: 1.6em;
  }
 

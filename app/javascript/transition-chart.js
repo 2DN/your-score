@@ -21,43 +21,28 @@ function transitionChart(){
                   myLineChart.destroy();
               }
               myLineChart = new Chart(ctx, {
-              //グラフの種類
               type: 'line',
-              //データの設定
               data: {
-                  //データ項目のラベル
                   labels: ["第1回", "第2回", "第3回", "第4回", "第5回", "第6回"],
-                  //データセット
                   datasets: [{
-                      //凡例
                       label: "成績推移",
-                      //背景色
                       backgroundColor: "rgba(75,192,192,0.4)",
-                      //枠線の色
                       borderColor: "rgba(75,192,192,1)",
-                      //グラフのデータ
                       data: scores
                   },
                   {
-                      //凡例
                       label: "平均点推移",
-                      //背景色
                       backgroundColor: "rgba(75,192,192,0.4)",
-                      //枠線の色
                       borderColor: "rgba(75,192,192,1)",
-                      //グラフのデータ
                       data: averages
                   }]
               },
-              //オプションの設定
               options: {
                   responsive: true,
                   maintainAspectRatio: false,
                   scales: {
-                      //縦軸の設定
                       yAxes: [{
                           ticks: {
-                              //最小値を0にする
                               beginAtZero: true,
                               max: 1000
                           }

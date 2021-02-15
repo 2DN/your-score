@@ -9,7 +9,6 @@ class ScoresController < ApplicationController
   end
 
   def index
-    # 最新のスコアを取得し表示
     scores = Score.where(user_id: current_user.id).order(created_at: :desc)
     if scores.length > 0
       @score = scores[0]
@@ -96,10 +95,8 @@ class ScoresController < ApplicationController
   end
 
   def search
-    # タグとユーザーに紐づいたスコア
     @tag = Tag.find(params[:id])
     @scores = @tag.scores.where(user_id: current_user.id)
-    # [num,num,num]のような形で各トータルスコアを取得
     @total_scores_in_array = []
     @scores.each do |score|
       total_score = 0
@@ -111,7 +108,6 @@ class ScoresController < ApplicationController
       @total_scores_in_array << total_score
     end
 
-    # 平均点の合計
     @averages = []
     @scores.each do |score|
       @averages << Average.find(score.id)
