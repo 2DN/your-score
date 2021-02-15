@@ -1,8 +1,6 @@
 function bothCharts(){
   var barChart;
   var radarChart;
-
-  
   
   const ctx1 = document.getElementById("myBarChart");
   if( barChart ){

@@ -131,9 +131,9 @@ class ScoresController < ApplicationController
   private
 
   def score_get_charted
-    color = %w[black dimgray gray darkgray silver lightgray midnightblue navy darkblue blue dodgerblue lightblue aqua cadetblue aquamarine teal
-               green darkgreen forestgreen lime olive yellow gold orange maroon darkred red brown pink deeppink violet plum magenta orchid darkviolet
-               purple indigo blueviolet fuchsia slateblue white orange orange black]
+    color = %w[nil nil #e60012 #e5171f red #f62e36 #009bbf #00a7db #00ada9 #0079c2 #0078ba #00a0de dodgerblue lightblue aqua blue aquamarine teal
+               #00bb85 #00ac9b forestgreen lime olive #009944 #6cbb5a #019a66 #a9cc51 green #ff9500 #c1a470 #f39700 #ee7b1a #9c5e31 #bb641d #814721 #e3acae marron
+               #bb5535 #e29676 #8f76d6 #9b7cb6 #e85298 #e44d93 nil nil nil nil]
 
     @array_score = []
     @array_color = []
