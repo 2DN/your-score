@@ -1,0 +1,37 @@
+<head>
+  <% content_for :css do %>
+    <%= stylesheet_link_tag 'regi_new' %>
+  <% end %>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <p>YourScore</p>
+    </div>
+    <div class="header-right">
+      <%= link_to "新規登録", new_user_registration_path, class: "sign" %>
+      <%= link_to "ログイン", new_user_session_path, class: "sign" %>
+    </div>
+  </header>
+  <main>
+    <div id="welcome">
+      <div class="container">
+        <h1>Welcome to YourScore!</h1>
+        <div class="sentences">
+          <div class="wrap">
+            <p>成績はあなたが管理することで</p>
+          </div>
+          <div class="wrap">
+            <p>初めて<span>あなたの成績</span>になります。</p>
+          </div>
+          <div class="wrap">
+            <p>そんなあなたの成績をオンラインで</p>
+          </div>
+          <div class="wrap">
+            <p>簡潔に管理しましょう！</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>

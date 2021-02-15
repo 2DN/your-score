@@ -1,6 +1,0 @@
-      title: @score.title, jpn_ctp: @score.jpn_ctp, jpn_classic: @score.jpn_classic, jpn_chinese: @score.jpn_chinese, jpn: @score.jpn,
-      math_1_a: @score.math_1_a, math_2_b: @score.math_2_b, math_3_c: @score.math_3_c, math_1_a: @score.math_1_a, math_1: @score.math_1, math_2: @score.math_2, math_3: @score.math_3, math_a: @score.math_a, math_b: @score.math_b, math_c: @score.math_c, math: @score.math,
-      book_keep: @score.book_keep, basic_info: @score.basic_info,
-      science_n_life: @score.science_n_life, basic_physics: @score.basic_physics, physics: @score.physics, basic_chemistry: @score.basic_chemistry, chemistry: @score.chemistry, basic_earth_science: @score.basic_earth_science, earth_science: @score.earth_science, basic_biology: @score.basic_biology, biology: @score.biology, science: @score.science,
-      wld_history_a: @score.wld_history_a, wld_history_b: @score.wld_history_b, dms_history_a: @score.dms_history_a, dms_history_b: @score.dms_history_b, geography_a: @score.geography_a, geography_b: @score.geography_b, ctp_society: @score.ctp_society, ethics: @score.ethics, politics_n_economy: @score.politics_n_economy, ethics_n_politics_n_economy: @score.ethics_n_politics_n_economy, society: @score.society, 
-      listening: @score.listening, reading: @score.reading, english: @score.english, language: @score.language, review: @score.review

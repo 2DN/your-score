@@ -1,26 +1,49 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
+<head>
+  <% content_for :css do %>
+    <%= stylesheet_link_tag 'regi_new' %>
   <% end %>
+</head>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+<body>
+  <header>
+    <div class="header-left">
+      <p>YourScore</p>
+    </div>
+    <div class="header-right">
+      <%= link_to "新規登録", new_user_registration_path, class: "sign" %>
+      <%= link_to "ログイン", new_user_session_path, class: "sign" %>
+    </div>
+  </header>
+  <main>
+    
+    <%= form_with model: @user, url: new_user_session_path, id: "signed_user", local: true do |f| %>
+      <div class="error_msg">
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+        <% end %>  
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="field">
+        <%= f.email_field :email, placeholder: "メールアドレス", id: "defo_rm_id3", autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password, placeholder: "パスワード", id: "defo_rm_id4" %>
+      </div>
+
+      <div class="submit-btn">
+        <%= f.submit "ログイン" %>
+      </div>
+
+      <div class="description">
+        <a href="#">利用方法はこちら</a>
+        <%= link_to "パスワードを忘れた方", new_user_password_path  %>
+      </div>
+
+    <% end %>
+
+    
+  </main>
+  
+  
+</body>

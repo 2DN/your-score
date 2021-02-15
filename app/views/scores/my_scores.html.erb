@@ -1,21 +1,50 @@
-<div>
-<%= link_to "トップページ", root_path %>
-</div>
-<div>
-
-
-
-
-
-</div>
-
-<table>
-  <% @scores.each do |score| %>
-  <tr>
-    <td><%= score.title %></td>
-    <td><%= link_to "詳細", score_path(score) %></td>
-    <td><%= link_to "編集", edit_score_path(score) %></td>
-    <td><%= link_to "削除", score_path(score), method: :delete %></td>
-  </tr>
+<head>
+  <% content_for :css do %>
+    <%= stylesheet_link_tag 'my_score' %>
   <% end %>
-</table>
+  
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-left">
+        <a href="#" id="menu-btn"><i class="fas fa-bars bars"></i></a>
+      </div>
+      <div class="header-right">
+        <p>成績一覧ページ</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <%= render partial: "menu" %>
+
+    <div class="main-wrapper">
+      <% if @scores.length != 0 %>
+        <% @scores.each do |score| %>
+          <div class="score-box">
+              <p class="title">　<%= score.title %></p>
+            <div class="btn-box">
+              <p><%= link_to "詳細", score_path(score), class: "detail-btn" %></p>
+              <p><%= link_to "編集", edit_score_path(score), class: "edit-btn" %></p>
+              <p><%= link_to "削除", score_path(score), method: :delete, class: "delete-btn" %></p>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="init-container">
+          <div class="box">
+            <div class="wrap">
+              <p>成績を登録してみよう！</p>
+            </div>
+            <%= link_to "新規作成", new_score_path %>
+            <div class="init-img">
+              <%= image_tag "j40_12_9.jpg" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </main>
+</body>
+

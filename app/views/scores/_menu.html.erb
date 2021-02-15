@@ -1,0 +1,43 @@
+<div id="menus">
+
+  <div class="menu-container">
+
+    <div class="menu">
+      <%= link_to "トップページ", scores_path %>
+    </div>
+
+    <div class="menu">
+      <%= link_to "成績登録", new_score_path %>
+    </div>
+
+    <div class="menu">
+      <%= link_to "過去の成績", my_scores_scores_path %>
+    </div>
+
+    <div class="menu">
+      <%= link_to "成績推移", show_transition_scores_path %>
+    </div>
+
+    <div class="menu">
+      <%= link_to "テスト予定登録", tasks_path %>
+    </div>
+
+    <div class="menu">
+      <%= link_to "テスト予定一覧", my_tasks_tasks_path %>
+    </div>
+
+    <div class="menu">
+      <%= link_to "ユーザー編集", edit_user_registration_path %>
+    </div>
+
+    <div class="menu">
+      <a href="#">使い方</a>
+    </div>
+
+    <div class="menu">
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    </div>
+
+  </div>
+
+</div>
