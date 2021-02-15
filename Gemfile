@@ -58,3 +58,5 @@ gem 'devise'
 gem 'pry-rails'
 
 gem 'gon'
+
+gem 'rails-i18n'

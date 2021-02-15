@@ -1,20 +1,66 @@
 <head>
-
+  <% content_for :css do %>
+    <%= stylesheet_link_tag 'show' %>
+  <% end %>
 </head>
 <body>
-<header>
-</header>
-<main>
-<%= link_to "トップページ", root_path %>
-<%= @array_color %>
-<div>
-<canvas id="myBarChart" width="800" height="400"></canvas>
-</div>
-<div>
-<canvas id="myRadarChart" width="800" height="400"></canvas>
-</div>
 
-</main>
-<footer>
-</footer>
+  <header>
+    <div class="header-container">
+      <div class="header-left">
+        <a href="#" id="menu-btn"><i class="fas fa-bars bars"></i></a>
+      </div>
+      <div class="header-right">
+        <p>成績詳細ページ</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <%= render partial: "menu" %>
+
+    <div class="main-wrapper" style="overflow:auto;">
+      <h1><%= @score.title %></h1>
+
+      <div class="scores-box box">
+        <table border="1">
+          <tr>
+            <th>科目</th>
+            <th>点数</th>
+            <th>平均点</th>
+          </tr>
+          <%= @array_score.zip(@array_subject, @array_average) do |score, sbj, avg| %>
+          <tr>
+            <td><%= sbj %></td>
+            <td><%= score %></td>
+            <td><%= avg %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+
+      <div class="bar-chart-box box">
+          <canvas id="myBarChart"></canvas>
+      </div>
+
+      <div class="radar-chart-box box">
+        <canvas id="myRadarChart"></canvas>
+      </div>
+
+      <div class="review-box box">
+        <p>　メモ</p>
+        <%= @score.review %>
+      </div>
+
+      <div class="edit-n-delete-box box">
+        
+        <p><%= link_to "編集", edit_score_path(@score), class: "edit-btn" %></p>
+        <p><%= link_to "削除", score_path(@score), method: :delete, class: "delete-btn" %></p>
+      </div>
+
+    </div>
+  </main>
+
+  
+
 </body>

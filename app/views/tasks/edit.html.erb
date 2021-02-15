@@ -17,7 +17,7 @@
   <main>
     <%= render partial: "scores/menu" %>
     <div class="main-container">
-      <%= form_with model: @task, url: tasks_path, class: "new_task", local: true do |f| %>
+      <%= form_with model: @task, url: task_path, method: :patch, class: "new_task", local: true do |f| %>
         <%= render 'shared/error_messages', model: f.object %>
         <div class="field">
           <%= f.text_field :task_title, placeholder: "タスク名" %>
@@ -29,7 +29,7 @@
         <%= f.date_field :limit_date %>
         </div>
         <div class="field">
-        <%= f.submit :submit, value: "予定を登録" %>
+        <%= f.submit :submit, value: "編集完了" %>
         </div>
       <% end %>
     </div>

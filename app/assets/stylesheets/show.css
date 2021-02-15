@@ -1,0 +1,214 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: #bbb
+}
+
+html {
+  height: 100%;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+body {
+  width: calc(100vw - calc(100vw - 100%));
+  height: 100%;
+  font-size: 10px;
+  background-color: #f4eade;
+}
+
+header {
+  width: 100%;
+  height: 10vh;
+  background-color: #2988bc;
+  box-shadow: 0 3px 15px 1px gray;
+}
+
+.header-container {
+  width: 95%;
+  height: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bars {
+  color: #f4eade;
+  font-size: 6.0em;
+}
+
+.header-right {
+  width: 50%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-right p{
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #f4eade;
+}
+
+main {
+  width: 100vw;
+  height: 90vh;
+  font-weight: bold;
+  background-color: #f4eade;
+  position: relative;
+}
+
+#menus {
+  width: 45%;
+  height: 100%;
+  background-color: rgba(47, 73, 110, 0.9);
+  position: absolute;
+  z-index: 1;
+ }
+ 
+ .menu-container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+ }
+ 
+ .menu a{
+   color: #f4eade;
+   
+   font-size: 1.6em;
+ }
+
+ .main-wrapper {
+  width: 95%;
+  height: 95%;
+  margin: 0 auto;
+ }
+
+ h1{
+   padding: 10px 0;
+   border-bottom: black dashed 5px;
+   text-align: center;
+   height: 5vh;
+   font-size: 2.1em;
+   font-weight: bold;
+   text-shadow: 1px 1px 1px gray;
+ }
+
+ .box{
+  margin: 20px auto;
+  
+ }
+
+.scores-box{
+  width: 98%;
+}
+
+table {
+  width: 100%;
+  border: gray 5px solid;
+}
+
+table th{
+  text-align: center;
+  padding: 5px 0;
+  font-size: 1.8em;
+  font-weight: bold;
+  border-bottom: gray 5px solid;
+}
+
+table td{
+  text-align: center;
+  padding: 5px 0;
+  font-size: 1.4em;
+}
+
+.scores-box p{
+  border-left: solid gray 5px;
+  margin: 30px 0;
+  font-size: 1.6em;
+}
+
+.bar-chart-box{
+  width: 98%;
+  height: 40vh;
+  padding: 30px 0;
+  border: gray solid 2px;
+}
+
+.radar-chart-box{
+  width: 98%;
+  height: 40vh;
+  padding: 30px 0;
+  border: gray solid 2px;
+}
+
+.review-box{
+  width: 95%;
+  font-size: 1.6em;
+  padding-bottom: 15px;
+  border-bottom: black dashed 5px;
+  margin: 30px auto 0 auto;
+}
+
+.review-box p{
+  font-size: 1.7em;
+  border-left: gray solid 5px;
+  margin-bottom: 10px;
+}
+
+.edit-n-delete-box{
+  width: 98%;
+  height: 6vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-n-delete-box p{
+  width: 45%;
+  height: 100%;
+  font-size: 2.1em;
+  text-align: center;
+}
+
+.edit-n-delete-box a{
+  display: block;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px 0 gray;
+}
+
+.edit-n-delete-box a:active{
+  position: relative;
+  top: 5px;
+  box-shadow: none;
+}
+
+.edit-btn {
+ color: #f4eade;
+ background-color: #ed8c72;
+}
+
+.delete-btn {
+ color: #f4eade;
+ background-color: #2988bc;
+}
+
+@media screen and (min-width: 1024px){
+  #menus{
+    width: 20%;
+  }
+  
+  .main-wrapper {
+    width: 75%;
+  }
+}
