@@ -45,7 +45,7 @@ class ScoresController < ApplicationController
   end
 
   def my_scores
-    @scores = Score.where(user_id: current_user.id)
+    @scores = Score.where(user_id: current_user.id).order("created_at desc")
   end
 
   def show
