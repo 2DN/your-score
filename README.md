@@ -214,3 +214,4 @@
 
 -belongs_to :user
 
+https://ya-score.herokuapp.com/
