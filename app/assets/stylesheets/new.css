@@ -1,6 +1,7 @@
 *{
   margin: 0;
   padding: 0;
+  -webkit-appearance: none;
 }
 
 *:focus {
@@ -191,7 +192,6 @@ textarea {
 }
 
 input[type="submit"]{
-  -webkit-appearance: none;
   display: block;
   width: 50%;
   height: 10vh;
@@ -202,7 +202,6 @@ input[type="submit"]{
   color: #f4eade;
   background-color: #ed8c72;
   box-shadow: 0 5px 5px 0 gray;
-  
 }
 
 input[type="submit"]:active{
