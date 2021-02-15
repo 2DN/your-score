@@ -13,7 +13,7 @@ class TasksController < ApplicationController
       @task.save
       redirect_to action: :index
     else
-      render :index
+      render :my_tasks
     end
   end
 
