@@ -70,7 +70,6 @@ main {
   height: 100%;
   background-color: rgba(47, 73, 110, 0.9);
   position: absolute;
-  
   z-index: 1;
   font-weight: bold;
  }
@@ -86,7 +85,6 @@ main {
  
  .menu a{
    color: #f4eade;
-   
    font-size: 1.6em;
  }
 
@@ -101,7 +99,6 @@ main {
  .tasks {
    width: 90%;
    height: 95%;
-   
  }
 
  .task{

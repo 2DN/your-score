@@ -63,7 +63,6 @@ main {
   width: 100vw;
   height: 90vh;
   font-weight: bold;
-  /* border: solid black 1px; */
   position: relative;
 }
 
@@ -72,10 +71,8 @@ main {
   height: 100%;
   background-color: rgba(47, 73, 110, 0.9);
   position: absolute;
-  
   z-index: 1;
  }
- 
  
  .menu-container {
   width: 90%;
@@ -97,7 +94,6 @@ main {
    height: 90vh;
    overflow: scroll;
    margin: 0 auto 0 auto;
-   /* border: solid black 1px; */
  }
 
  .score-box {

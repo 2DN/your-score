@@ -14,36 +14,34 @@
   </header>
   <main>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "edit-form" }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    
-    <%= f.text_field :username, placeholder: "ユーザー名", autofocus: true, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.text_field :username, placeholder: "ユーザー名", autofocus: true, autocomplete: "off" %>
+    </div>
   
-  <div class="field">
-    <%= f.email_field :email, placeholder: "メールアドレス", autofocus: true, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.email_field :email, placeholder: "メールアドレス", autofocus: true, autocomplete: "off" %>
+    </div>
 
-  <div class="field">
-    <%= f.password_field :password, placeholder: "新しいパスワードを入力", autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.password_field :password, placeholder: "新しいパスワードを入力", autocomplete: "off" %>
+    </div>
 
-  <div class="field">
-    
-    <%= f.password_field :password_confirmation, placeholder: "新しいパスワードを再入力", autocomplete: "off" %>
-  </div>
+    <div class="field"> 
+      <%= f.password_field :password_confirmation, placeholder: "新しいパスワードを再入力", autocomplete: "off" %>
+    </div>
 
-  <div class="field">
-    
-    <%= f.password_field :current_password, placeholder: "現在のパスワードを入力", autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.password_field :current_password, placeholder: "現在のパスワードを入力", autocomplete: "off" %>
+    </div>
 
-  <div class="submit-btn">
-    <%= f.submit "編集完了" %>
-  </div>
-<% end %>
+    <div class="submit-btn">
+      <%= f.submit "編集完了" %>
+    </div>
+
+    <% end %>
   </main>
-  <a href="#" id="btn">アカウントを削除するボタンを表示する</a>
-  <p id="destroy"><%= button_to "アカウントを削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  <p><%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, id: "destroy" %></p>
 </body>

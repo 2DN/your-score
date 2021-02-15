@@ -84,7 +84,6 @@ main {
 .field {
   width: 90%;
   height: 15%;
-  /* border: solid 1px black; */
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -105,7 +104,6 @@ main {
 .submit-btn {
   width: 90%;
   height: 15%;
-  /* border: black solid 1px; */
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -130,9 +128,23 @@ main {
   box-shadow: none;
 }
 
-#btn {
-  margin-left: 20px;
-  opacity: 0.5;
+#destroy {
+  display: block;
+  background-color: red;
+  color: white;
+  opacity: 0.4;
+  font-size: 1.5em;
+  width: 50%;
+  height: 30px;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px 0 gray;
+}
+
+#destroy:active{
+  position: relative;
+  top: 5px;
+  box-shadow: none;
 }
 
 @media screen and (min-width: 1024px){

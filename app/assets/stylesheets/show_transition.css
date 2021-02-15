@@ -71,7 +71,6 @@ main {
   height: 100%;
   background-color: rgba(47, 73, 110, 0.9);
   position: absolute;
-  
   z-index: 1;
  }
  
@@ -86,7 +85,6 @@ main {
  
  .menu a{
    color: #f4eade;
-   
    font-size: 1.6em;
  }
 
@@ -94,7 +92,6 @@ main {
   width: 95%;
   height: 96%;
   margin: 0 auto;
-  /* border: solid 1px black; */
 }
 
 #form-box {

@@ -9,7 +9,6 @@ class ScoresController < ApplicationController
   end
 
   def index
-    # 最新のスコアを取得し表示
     scores = Score.where(user_id: current_user.id).order(created_at: :desc)
     if scores.length > 0
       @score = scores[0]
@@ -96,10 +95,8 @@ class ScoresController < ApplicationController
   end
 
   def search
-    # タグとユーザーに紐づいたスコア
     @tag = Tag.find(params[:id])
     @scores = @tag.scores.where(user_id: current_user.id)
-    # [num,num,num]のような形で各トータルスコアを取得
     @total_scores_in_array = []
     @scores.each do |score|
       total_score = 0
@@ -111,7 +108,6 @@ class ScoresController < ApplicationController
       @total_scores_in_array << total_score
     end
 
-    # 平均点の合計
     @averages = []
     @scores.each do |score|
       @averages << Average.find(score.id)
@@ -131,9 +127,9 @@ class ScoresController < ApplicationController
   private
 
   def score_get_charted
-    color = %w[black dimgray gray darkgray silver lightgray midnightblue navy darkblue blue dodgerblue lightblue aqua cadetblue aquamarine teal
-               green darkgreen forestgreen lime olive yellow gold orange maroon darkred red brown pink deeppink violet plum magenta orchid darkviolet
-               purple indigo blueviolet fuchsia slateblue white orange orange black]
+    color = %w[nil nil #e60012 #e5171f red #f62e36 #009bbf #00a7db #00ada9 #0079c2 #0078ba #00a0de dodgerblue lightblue aqua blue aquamarine teal
+               #00bb85 #00ac9b forestgreen lime olive #009944 #6cbb5a #019a66 #a9cc51 green #ff9500 #c1a470 #f39700 #ee7b1a #9c5e31 #bb641d #814721 #e3acae marron
+               #bb5535 #e29676 #8f76d6 #9b7cb6 #e85298 #e44d93 nil nil nil nil]
 
     @array_score = []
     @array_color = []
