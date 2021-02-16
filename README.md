@@ -59,6 +59,7 @@
 | reading                     | integer    |                                | リーディング
 | english                     | integer    |                                | 英語
 | language                    | integer    |                                | 外国語
+| review                      | string     |                                |
 | user                        | references | null: false, foreign_key: true |
 
 
