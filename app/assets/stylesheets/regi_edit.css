@@ -90,7 +90,6 @@ main {
   justify-content: center;
   align-items: flex-end;
   font-family: 'M PLUS Rounded 1c', sans-serif;
-  border: solid 1px black;
 }
 
 .field input{
