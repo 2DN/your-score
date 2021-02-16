@@ -3,6 +3,7 @@ ja:
    attributes:
     task:
       task_title: タスク名
+      memo: メモ
       limit_date: 予定日
     user:
       username: "ユーザー名"
