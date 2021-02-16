@@ -114,6 +114,10 @@ class CreateScoreSubjectAverage
     validates :avg_language
   end
 
+  validates :title, length: { maximum: 20 }, allow_blank: true
+  validates :tag_name, length: { maximum: 10 }, allow_blank: true
+  validates :review, length: { maximum: 1000 }, allow_blank: true
+
   def save
     score = Score.create(title: title, jpn_ctp: jpn_ctp, jpn_classic: jpn_classic, jpn_chinese: jpn_chinese, jpn: jpn,
                          math_1_a: math_1_a, math_2_b: math_2_b, math_3_c: math_3_c, math_1_a: math_1_a, math_1: math_1, math_2: math_2, math_3: math_3, math_a: math_a, math_b: math_b, math_c: math_c, math: math,
