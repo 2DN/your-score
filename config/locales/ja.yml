@@ -4,6 +4,8 @@ ja:
     task:
       task_title: タスク名
       limit_date: 予定日
+    user:
+      username: "ユーザー名"
  activemodel:
    attributes:
      create_score_subject_average:
