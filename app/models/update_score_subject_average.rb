@@ -114,6 +114,10 @@ class UpdateScoreSubjectAverage
     validates :avg_language
   end
 
+  validates :title, length: { maximum: 20 }, allow_blank: true
+  validates :tag_name, length: { maximum: 10 }, allow_blank: true
+  validates :review, length: { maximum: 1000 }, allow_blank: true
+
   def initialize(attributes = nil, score: Score.new, average: Average.new, subject: Subject.new, tag: Tag.new)
     @score = score
     @average = average

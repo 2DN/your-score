@@ -35,7 +35,8 @@ ja:
        basic_earth_science: 地学基礎の点数
        earth_science: 地学の点数
        basic_biology: 生物基礎の点数
-       biology science: 生物の点数
+       biology: 生物の点数
+       science: 理科の点数
        wld_history_a: 世界史Aの点数
        wld_history_b: 世界史Bの点数
        dms_history_a: 日本史Aの点数
@@ -119,7 +120,8 @@ ja:
        basic_earth_science: 地学基礎の点数
        earth_science: 地学の点数
        basic_biology: 生物基礎の点数
-       biology science: 生物の点数
+       biology: 生物の点数
+       science: 理科の点数
        wld_history_a: 世界史Aの点数
        wld_history_b: 世界史Bの点数
        dms_history_a: 日本史Aの点数
