@@ -1,7 +1,6 @@
 *{
   margin: 0;
   padding: 0;
-  -webkit-appearance: none;
 }
 
 *:focus {
@@ -118,6 +117,7 @@ input[type="submit"]{
   margin-left: 5px;
   color: #f4eade;
   box-shadow: 0 5px 3px 0 gray;
+  -webkit-appearance: none;
 }
 
 input[type="submit"]:active{
