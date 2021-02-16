@@ -83,8 +83,8 @@ main {
 
 .field {
   width: 90%;
-  height: 15%;
-  padding-bottom: 12px;
+  height: 12%;
+  padding-bottom: 15px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
