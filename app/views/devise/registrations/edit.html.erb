@@ -41,7 +41,14 @@
       <%= f.submit "編集完了" %>
     </div>
 
+    <div class="field">
+    <p><%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, id: "destroy" %></p>
+    </div>
+    
     <% end %>
+    
   </main>
-  <p><%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, id: "destroy" %></p>
+  
+  
+  </div>
 </body>
