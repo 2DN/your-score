@@ -83,13 +83,14 @@ main {
 
 .field {
   width: 90%;
-  height: 14%;
+  height: 15%;
   padding-bottom: 12px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   font-family: 'M PLUS Rounded 1c', sans-serif;
+  border: solid 1px black;
 }
 
 .field input{
@@ -99,7 +100,7 @@ main {
   padding-bottom: 4px;
   border-bottom: solid white 3px;
   background-color: transparent;
-  font-size: 2.0em;
+  font-size: 1.8em;
 }
 
 .submit-btn {
