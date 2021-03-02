@@ -1,5 +1,5 @@
 # YourScore
-https://ya-score.herokuapp.com/
+http://35.72.97.233/
 主にスマートフォンでのご利用を想定しております。
 
 ## 概要
