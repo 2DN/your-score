@@ -17,6 +17,10 @@ http://35.72.97.233/
 こちらのQiitaにまとめております。
 https://qiita.com/2DN/items/7e22edd170594a03d25d
 
+・テストアカウント
+ email: nao@sample.com
+ pass: sample1234
+
 ## users テーブル
 
 | Column             | Type   | Options     |
