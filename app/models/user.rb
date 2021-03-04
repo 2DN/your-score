@@ -8,7 +8,15 @@ class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
 
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: VALID_PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください'
+  with_options on: :create do
+    validates_format_of :password, with: VALID_PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください'
+  end
+
+  with_options on: :update do
+    validates_format_of :password, with: VALID_PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください', allow_blank: true
+  end
+  
+  
   validates :username, presence: true
 
 end
