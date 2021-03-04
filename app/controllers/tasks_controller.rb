@@ -11,9 +11,9 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     if @task.validate
       @task.save
-      redirect_to action: :index
+      redirect_to action: :my_tasks
     else
-      render :my_tasks
+      render :index
     end
   end
 
