@@ -31,13 +31,8 @@
 
       <div class="boxes-wrapper">
         <div class="under-box">
-
-          <% if @tasks.length != 0 %>
-          <div class="task-container">
-            <p class="task-title"><%= @task.task_title %></p>
-            <p><span class="letters">残り</span><span class="remain-days"><%= @remain_days %></span><span class="letters">　日</span></p>
-          </div>
-          <% end %>
+          
+          
 
           <% if @tasks.length == 0 %>
           <div class="init-task-container">
@@ -45,6 +40,16 @@
              <p class="init-task">予定を作ろう！</p>
              </div>
              <%= link_to "新規作成", tasks_path %>
+          </div>
+          <% end %>
+          <% if @tasks.length != 0 %>
+          <div class="task-container">
+            <p class="task-title"><%= @task.task_title %></p>
+            <% if @remain_days != 0 %>
+            <p><span class="letters">残り</span><span class="remain-days"><%= @remain_days %></span><span class="letters">　日</span></p>
+            <% else %>
+              <p><span class="remain-days">本日</span></p>
+            <% end %>
           </div>
           <% end %>
         </div>

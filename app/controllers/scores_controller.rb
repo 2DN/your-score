@@ -21,12 +21,17 @@ class ScoresController < ApplicationController
     @tasks = Task.where(user_id: current_user.id)
 
     @tasks.each do |task|
+      if task.limit_date - today >= 0
       days << task.limit_date
+      end
     end
     if @tasks.length > 0
       coming_soon = days.min
-      @task = Task.find_by(limit_date: coming_soon)
-      @remain_days = (coming_soon - today).numerator
+      
+      
+        @task = Task.find_by(limit_date: coming_soon)
+        @remain_days = (@task.limit_date - today).numerator
+      
     end
   end
 
